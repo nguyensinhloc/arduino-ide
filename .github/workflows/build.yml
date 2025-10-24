@@ -446,7 +446,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download staged-for-merge channel file artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           merge-multiple: true
           path: ${{ env.CHANNEL_FILES_PATH }}
@@ -509,7 +509,7 @@ jobs:
 
     steps:
       - name: Download job transfer artifact that contains ${{ matrix.artifact.name }} tester build
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: ${{ env.JOB_TRANSFER_ARTIFACT_PREFIX }}${{ matrix.artifact.job-transfer-artifact-suffix }}
           path: ${{ env.BUILD_ARTIFACTS_FOLDER }}
@@ -590,7 +590,7 @@ jobs:
 
     steps:
       - name: Download all job transfer artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           merge-multiple: true
           path: ${{ env.ARTIFACTS_FOLDER }}
@@ -627,7 +627,7 @@ jobs:
 
     steps:
       - name: Download all job transfer artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           merge-multiple: true
           path: ${{ env.ARTIFACTS_FOLDER }}
